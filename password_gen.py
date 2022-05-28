@@ -1,20 +1,15 @@
 import random
 
-while True:
+q1 = input("How many passwords do you need?\n")
+ask = input("How many characters do you want the passwords to be?\n")
 
-    def password():
-        length = input("How many characters do you want your password to be?\n")
+lower = "abcdefghijklmnopqrstuvwxyz"
+upper = lower.upper()
+numbers = "1234567890"
+symbols = "~`!@#$%^&*()_+-={}[]\|;:<>,.?/'"
 
-        if int(length) > 94:
-            print("================================================\nMust be less than 95 characters\n================================================")
+l = int(q1) + int(1)
 
-        else:
-            lower = "abcdefghijklmmnopqrstuvwxyz"
-            upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            numbers = "1234567890"
-            symbols = "~`!@#$%^&*()_+-={}[]';<>?,./|\:"
-
-            password = "".join(random.sample(lower + upper + numbers + symbols, int(length)))
-            print(f"Your new password is\n {password}")
-            print("================================================\nMade by Samuel Sharivker\n================================================")
-    password()
+for x in range(1, l):
+    password = "".join(random.sample(lower + upper + numbers + symbols, int(ask)))
+    print(f"{x}. " + str(password))
